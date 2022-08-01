@@ -1,27 +1,15 @@
 module Main exposing (..)
 import Browser
-import Html exposing (Html, button, div, text)
-import Html.Events exposing (onClick)
-
-main = 
-    Browser.sandbox {init = 0, update = update, view = view}
-
-type Message = Increment | Decrement
-
-update msg model =
-
-    case msg of 
-        Increment ->
-            model + 1
-
-        Decrement ->
-            model - 1
-
+import Html exposing (Html, button, div, text, input,h1,p)
+import Html.Events exposing (onClick,onInput)
+import Html.Attributes exposing (class)
 
 view model = 
-    div[] 
-        [button[onClick Decrement] [text "."],
-        div [][text (String.fromInt model)],
-        button [onClick Increment][text "+"]
+    div [class "rahat"]
+        [ h1[][text "Welcome"]
+        , p [][text "Khub Bujhlam"]
         ]
-    
+        
+
+main = 
+    view "dummy model"
